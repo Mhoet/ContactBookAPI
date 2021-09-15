@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\bin\Debug\net5.0\ContactBook.Common.deps.json
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\bin\Debug\net5.0\ContactBook.Common.dll
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\bin\Debug\net5.0\ref\ContactBook.Common.dll
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\bin\Debug\net5.0\ContactBook.Common.pdb
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.AssemblyInfo.cs
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.dll
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ref\ContactBook.Common.dll
+C:\Users\hp\source\repos\ContactBook\ContactBook.Common\obj\Debug\net5.0\ContactBook.Common.pdb
