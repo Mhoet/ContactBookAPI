@@ -7,6 +7,6 @@ namespace ContactBook.Services
 {
     public interface ITokenGenerator
     {
-        Task<ResponseDTO> GenerateAuthenticationToken(AppUser user);
+        Task<string> GenerateAuthenticationToken(AppUser user);
     }
 }

@@ -1,6 +1,7 @@
 using ContactBook.Common;
 using ContactBook.Data;
 using ContactBook.Model;
+using ContactBook.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -27,16 +28,15 @@ namespace ContactBook.App
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IAppUserServices, AppUserServices>();
+            services.AddScoped<IAuthentication, Authentication>();
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddDbContext<ContactBookDBContext>(option =>
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ContactBookDBContext>().AddDefaultTokenProviders();
             services.AddControllers();
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ContactBook.App", Version = "v1" });
-            //});
             services.AddAuthentication(auth =>
             {
                 auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -56,7 +56,11 @@ namespace ContactBook.App
                     ValidateIssuerSigningKey = true,
                 };
             });
-
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.User.RequireUniqueEmail = true;
+                options.Password.RequiredLength = 8;
+            });
             services.Configure<UserPhotoSettings>(Configuration.GetSection("UserPhotoSettings"));
             services.AddControllers();
             services.AddSwaggerGen(c =>

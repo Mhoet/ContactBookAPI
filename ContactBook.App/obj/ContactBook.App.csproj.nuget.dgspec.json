@@ -37,6 +37,9 @@
               },
               "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Data\\ContactBook.Data.csproj": {
                 "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Data\\ContactBook.Data.csproj"
+              },
+              "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\ContactBook.Services.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\ContactBook.Services.csproj"
               }
             }
           }
@@ -238,6 +241,74 @@
         }
       }
     },
+    "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\ContactBook.DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\ContactBook.DTO.csproj",
+        "projectName": "ContactBook.DTO",
+        "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\ContactBook.DTO.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Model\\ContactBook.Model.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Model\\ContactBook.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Features": {
+              "target": "Package",
+              "version": "[5.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Model\\ContactBook.Model.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -281,6 +352,88 @@
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
               "version": "[5.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\ContactBook.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\ContactBook.Services.csproj",
+        "projectName": "ContactBook.Services",
+        "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\ContactBook.Services.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Common\\ContactBook.Common.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Common\\ContactBook.Common.csproj"
+              },
+              "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\ContactBook.DTO.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.DTO\\ContactBook.DTO.csproj"
+              },
+              "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Model\\ContactBook.Model.csproj": {
+                "projectPath": "C:\\Users\\hp\\source\\repos\\ContactBook\\ContactBook.Model\\ContactBook.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "CloudinaryDotNet": {
+              "target": "Package",
+              "version": "[1.15.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.12.2, )"
             }
           },
           "imports": [

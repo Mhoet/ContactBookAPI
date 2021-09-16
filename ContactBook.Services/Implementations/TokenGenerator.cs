@@ -24,7 +24,7 @@ namespace ContactBook.Services
             _userManager = userManager;
             _configuration = configuration;
         } 
-        public async Task<ResponseDTO> GenerateAuthenticationToken(AppUser user)
+        public async Task<string> GenerateAuthenticationToken(AppUser user)
         {
             var claims = new List<Claim>
             {
@@ -44,11 +44,8 @@ namespace ContactBook.Services
                 expires: DateTime.UtcNow.AddMinutes(5),
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256));
             string tokenAsString = new JwtSecurityTokenHandler().WriteToken(token);
-            return new ResponseDTO
-            {
-                Token = tokenAsString,
-                TokenValidUntil = token.ValidTo
-            };
+            DateTimeOffset tokenValidityPeriod = token.ValidTo;
+            return $"{tokenAsString} \nToken is valid until {tokenValidityPeriod}";
         }
     }    
 }

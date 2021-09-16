@@ -25,9 +25,9 @@ namespace ContactBook.Services
             {
                 if (await _userManager.CheckPasswordAsync(appUser, requester.Password))
                 {
-                   /* var response = AppUserMapping.GetResponse(appUser);
+                    var response = AppUserMapping.GetResponse(appUser);
                     response.Token = await _tokenGenerator.GenerateAuthenticationToken(appUser);
-                    return response;*/
+                    return response;
                 }
                 throw new AccessViolationException("Invalid Credentials");
             }

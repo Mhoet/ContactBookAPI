@@ -12,7 +12,6 @@ namespace ContactBook.DTO
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
         public string Token { get; set; }
-        public DateTimeOffset? TokenValidUntil { get; set; }
         public DateTimeOffset DateCreated { get; set; }
         public DateTimeOffset LastModified { get; set; }
 
