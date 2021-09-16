@@ -1,5 +1,6 @@
 ﻿using ContactBook.DTO;
 using ContactBook.Model;
+using ContactBook.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -10,7 +11,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContactBook.Services
+namespace ContactBook.Services.Implementations
 {
     public class TokenGenerator : ITokenGenerator
     {

@@ -1,11 +1,12 @@
 ﻿using ContactBook.DTO;
 using ContactBook.DTO.Mappings;
 using ContactBook.Model;
+using ContactBook.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Threading.Tasks;
 
-namespace ContactBook.Services
+namespace ContactBook.Services.Implementations
 {
     public class Authentication : IAuthentication
     {

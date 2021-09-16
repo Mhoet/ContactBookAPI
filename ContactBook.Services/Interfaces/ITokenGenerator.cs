@@ -3,7 +3,7 @@ using ContactBook.Model;
 using System;
 using System.Threading.Tasks;
 
-namespace ContactBook.Services
+namespace ContactBook.Services.Interfaces
 {
     public interface ITokenGenerator
     {

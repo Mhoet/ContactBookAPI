@@ -4,6 +4,7 @@ using ContactBook.Common;
 using ContactBook.DTO;
 using ContactBook.DTO.Mappings;
 using ContactBook.Model;
+using ContactBook.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -13,20 +14,18 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace ContactBook.Services
+namespace ContactBook.Services.Implementations
 {
     public class AppUserServices : IAppUserServices
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _configuration;
-        private readonly IOptions<PhotoUploadSettings> _photoUploadSettings;
         private readonly Cloudinary cloudinary;
 
-        public AppUserServices(UserManager<AppUser> userManager, IConfiguration configuration, IOptions<UserPhotoSettings> pictureSettings, IOptions<PhotoUploadSettings> photoUploadSettings)
+        public AppUserServices(UserManager<AppUser> userManager, IConfiguration configuration, IOptions<UserPhotoSettings> pictureSettings)
         {
             _userManager = userManager;
             _configuration = configuration;
-            _photoUploadSettings = photoUploadSettings;
             cloudinary = new Cloudinary(new Account(pictureSettings.Value.AccountName, pictureSettings.Value.ApiKey, pictureSettings.Value.ApiSecret));
         }
         public async Task<ResponseDTO> AddUser(RegistrationDTO registration)
@@ -148,39 +147,10 @@ namespace ContactBook.Services
             throw new MissingMemberException(errors);
         }
 
-        public async Task<bool> UpdatePhoto(string userId, PhotoDTO picture)
-        {
-            try
-            {
-                var userImage = await UploadPhoto(picture);
-                AppUser appUser = await _userManager.FindByIdAsync(userId);
-                if (appUser == null)
-                {
-                    throw new ArgumentException("Resource not found");
-                }
-                appUser.PhotoUrl = userImage.Url.ToString();
-                var result = await _userManager.UpdateAsync(appUser);
-                if (result.Succeeded)
-                {
-                    return true;
-                }
-                string errors = string.Empty;
-                foreach (var error in result.Errors)
-                {
-                    errors += error.Description + Environment.NewLine;
-                }
-                throw new MissingMemberException(errors);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         private async Task<UploadResult> UploadPhoto(PhotoDTO picture)
         {
             bool photoFormat = false;
-            var listOfPhotoExtensions = _photoUploadSettings.Value.Formats;
+            var listOfPhotoExtensions = _configuration.GetSection("PhotoSettings:Formats").Get<List<string>>();
             foreach (var item in listOfPhotoExtensions)
             {
                 if (picture.PhotoUrl.FileName.EndsWith(item))
@@ -208,5 +178,34 @@ namespace ContactBook.Services
             }
             return uploadResult;
         }
+
+        public async Task<bool> UpdatePhoto(string userId, PhotoDTO picture)
+        {
+            try
+            {
+                var userImage = await UploadPhoto(picture);
+                AppUser appUser = await _userManager.FindByIdAsync(userId);
+                if (appUser == null)
+                {
+                    throw new ArgumentException("Resource not found");
+                }
+                appUser.PhotoUrl = userImage.Url.ToString();
+                var result = await _userManager.UpdateAsync(appUser);
+                if (result.Succeeded)
+                {
+                    return true;
+                }
+                string errors = string.Empty;
+                foreach (var error in result.Errors)
+                {
+                    errors += error.Description + Environment.NewLine;
+                }
+                throw new MissingMemberException(errors);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }       
     }
 }

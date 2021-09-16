@@ -2,6 +2,8 @@ using ContactBook.Common;
 using ContactBook.Data;
 using ContactBook.Model;
 using ContactBook.Services;
+using ContactBook.Services.Implementations;
+using ContactBook.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -62,7 +64,6 @@ namespace ContactBook.App
                 options.Password.RequiredLength = 8;
             });
             services.Configure<UserPhotoSettings>(Configuration.GetSection("UserPhotoSettings"));
-            services.Configure<PhotoUploadSettings>(Configuration.GetSection("PhotoSettings"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

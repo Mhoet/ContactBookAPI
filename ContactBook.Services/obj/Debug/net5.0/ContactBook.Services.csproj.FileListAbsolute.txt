@@ -17,3 +17,6 @@ C:\Users\hp\source\repos\ContactBook\ContactBook.Services\obj\Debug\net5.0\Conta
 C:\Users\hp\source\repos\ContactBook\ContactBook.Services\obj\Debug\net5.0\ContactBook.Services.dll
 C:\Users\hp\source\repos\ContactBook\ContactBook.Services\obj\Debug\net5.0\ref\ContactBook.Services.dll
 C:\Users\hp\source\repos\ContactBook\ContactBook.Services\obj\Debug\net5.0\ContactBook.Services.pdb
+C:\Users\hp\source\repos\ContactBook\ContactBook.Services\bin\Debug\net5.0\ContactBook.Services.runtimeconfig.json
+C:\Users\hp\source\repos\ContactBook\ContactBook.Services\bin\Debug\net5.0\ContactBook.Services.runtimeconfig.dev.json
+C:\Users\hp\source\repos\ContactBook\ContactBook.Services\obj\Debug\net5.0\ContactBook.Services.genruntimeconfig.cache
