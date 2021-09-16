@@ -45,7 +45,7 @@ namespace ContactBook.Services
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256));
             string tokenAsString = new JwtSecurityTokenHandler().WriteToken(token);
             DateTimeOffset tokenValidityPeriod = token.ValidTo;
-            return $"{tokenAsString} \nToken is valid until {tokenValidityPeriod}";
+            return tokenAsString/*$"{tokenAsString} \nToken is valid until {tokenValidityPeriod}"*/;
         }
     }    
 }

@@ -62,6 +62,7 @@ namespace ContactBook.App
                 options.Password.RequiredLength = 8;
             });
             services.Configure<UserPhotoSettings>(Configuration.GetSection("UserPhotoSettings"));
+            services.Configure<PhotoUploadSettings>(Configuration.GetSection("PhotoSettings"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

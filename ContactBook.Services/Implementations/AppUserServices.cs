@@ -19,12 +19,14 @@ namespace ContactBook.Services
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly IOptions<PhotoUploadSettings> _photoUploadSettings;
         private readonly Cloudinary cloudinary;
 
-        public AppUserServices(UserManager<AppUser> userManager, IConfiguration configuration, IOptions<UserPhotoSettings> pictureSettings)
+        public AppUserServices(UserManager<AppUser> userManager, IConfiguration configuration, IOptions<UserPhotoSettings> pictureSettings, IOptions<PhotoUploadSettings> photoUploadSettings)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _photoUploadSettings = photoUploadSettings;
             cloudinary = new Cloudinary(new Account(pictureSettings.Value.AccountName, pictureSettings.Value.ApiKey, pictureSettings.Value.ApiSecret));
         }
         public async Task<ResponseDTO> AddUser(RegistrationDTO registration)
@@ -178,7 +180,7 @@ namespace ContactBook.Services
         private async Task<UploadResult> UploadPhoto(PhotoDTO picture)
         {
             bool photoFormat = false;
-            var listOfPhotoExtensions = _configuration.GetSection("PhotoSettings:Formats").();
+            var listOfPhotoExtensions = _photoUploadSettings.Value.Formats;
             foreach (var item in listOfPhotoExtensions)
             {
                 if (picture.PhotoUrl.FileName.EndsWith(item))
