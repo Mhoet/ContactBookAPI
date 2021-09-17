@@ -6,16 +6,8 @@ namespace ContactBook.DTO
 {
     public class PagingDTO
     {
-        const int numberOfUsersPerPage = 12;
-        public int PageNumber { get; set; } = 1;
+        public int PageNumber { get; set; }
+        public int NumberOfUsers { get; set; }     
 
-        private int usersPerPage = 6;
-        public int UsersPerPage
-        {
-            get => UsersPerPage;
-            set => UsersPerPage = (value > numberOfUsersPerPage) ? numberOfUsersPerPage : value;
-        }
-
-       
     }
 }

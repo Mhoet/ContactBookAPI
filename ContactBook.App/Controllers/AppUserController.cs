@@ -129,8 +129,7 @@ namespace ContactBook.App.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("all-users")]
+        [HttpGet("get-users")]
         [Authorize(Roles = "Admin")]
         public IActionResult GetUsers([FromQuery] PagingDTO paging)
         {
@@ -195,8 +194,7 @@ namespace ContactBook.App.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("search")]
+        [HttpGet("search")]
         [Authorize(Roles = "Admin, Regular")]
         public IActionResult Search([FromQuery] PagingDTO pagination, string searchQuery)
         {

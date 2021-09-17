@@ -86,21 +86,6 @@ namespace ContactBook.Services.Implementations
             return AppUserMapping.GetResponse(appUser);
         }
 
-        //public List<ResponseDTO> GetUsers()
-        //{
-        //    var users = _userManager.Users;
-        //    if (users == null)
-        //    {
-        //        throw new ArgumentException("No record");
-        //    }
-        //    List<ResponseDTO> appUsers = new List<ResponseDTO>();
-        //    foreach (AppUser user in users)
-        //    {
-        //        appUsers.Add(AppUserMapping.GetResponse(user));
-        //    }
-        //    return appUsers;
-        //}
-
         public Paging<ResponseDTO> GetUsers(PagingDTO paging)
         {
             var users = _userManager.Users;
@@ -113,7 +98,7 @@ namespace ContactBook.Services.Implementations
             {
                 appUsers.Add(AppUserMapping.GetResponse(user));
             }
-            var pages = Paging<ResponseDTO>.CreatePages(appUsers, paging.PageNumber, paging.UsersPerPage);
+            var pages = Paging<ResponseDTO>.CreatePages(appUsers, paging.PageNumber, paging.NumberOfUsers);
             return pages;
         }
 
@@ -133,7 +118,7 @@ namespace ContactBook.Services.Implementations
                 appUsers.Add(AppUserMapping.GetResponse(user));
             }
 
-            var pages = Paging<ResponseDTO>.CreatePages(appUsers, paging.PageNumber, paging.UsersPerPage);
+            var pages = Paging<ResponseDTO>.CreatePages(appUsers, paging.PageNumber, paging.NumberOfUsers);
             return pages;
         }
 
