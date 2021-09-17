@@ -92,7 +92,7 @@ namespace ContactBook.App.Controllers
         [HttpGet]
         [Route("email")]
         [Authorize(Roles = "Admin, Regular")]
-        public async Task<IActionResult> GetUserByEmail(string email)
+        public async Task<IActionResult> GetUserByEmail([FromQuery] string email)
         {
             try
             {
@@ -132,11 +132,12 @@ namespace ContactBook.App.Controllers
         [HttpGet]
         [Route("all-users")]
         [Authorize(Roles = "Admin")]
-        public IActionResult GetUsers([FromQuery] PagingDTO pagination)
+        public IActionResult GetUsers([FromQuery] PagingDTO paging)
         {
             try
             {
-                var result = _appUserService.GetUsers(pagination);
+                var result = _appUserService.GetUsers(paging);
+
                 return Ok(result);
             }
             catch (ArgumentException argEx)
