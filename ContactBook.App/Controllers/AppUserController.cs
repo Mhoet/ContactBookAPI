@@ -196,7 +196,7 @@ namespace ContactBook.App.Controllers
 
         [HttpGet("search")]
         [Authorize(Roles = "Admin, Regular")]
-        public IActionResult Search([FromQuery] PagingDTO pagination, string searchQuery)
+        public IActionResult Search([FromQuery] PagingDTO pagination, string searchQuery) 
         {
             try
             {
