@@ -49,7 +49,7 @@ namespace ContactBook.App.Controllers
             try
             {
                 var result = await _appUserService.UpdateAppUser(userId, userUpdate);
-                return NoContent();
+                return Ok("Update Successfull");
             }
             catch (MissingMemberException ex)
             {
@@ -73,7 +73,7 @@ namespace ContactBook.App.Controllers
             try
             {
                 var result = await _appUserService.UpdateAppUser(userId, userUpdate);
-                return NoContent();
+                return Ok(result);
             }
             catch (MissingMemberException ex)
             {
@@ -178,7 +178,7 @@ namespace ContactBook.App.Controllers
             try
             {
                 var result = await _appUserService.UpdatePhoto(userId, photo);
-                return NoContent();
+                return Ok("Photo successfully updated");
             }
             catch (MissingMemberException ex)
             {
